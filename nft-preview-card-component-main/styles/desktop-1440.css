@@ -1,0 +1,8 @@
+body{
+    display: flex;
+    height: max-content;
+    background-color: rgb(15, 4, 34);
+}
+.card{
+    max-width: 340px;
+}

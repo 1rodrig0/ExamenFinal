@@ -1,0 +1,111 @@
+body {
+    background-color: #f0f0f0; /* Fondo de la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.mustache {
+    width: 130px;
+    height: 130px;
+    top: 90px;
+    left: 235px; /* Ajustado para centrar el bigote */
+    border-radius: 60%;
+    position: absolute;
+    color: black;
+    box-shadow:
+        210px 240px 0 0 currentColor,
+        320px 240px 0 0 currentColor;
+}
+
+.mustache::before {
+    content: "";
+    position: absolute;
+    left: 80px;
+    top: 115px;
+    width: 210px;
+    height: 120px;
+    border-bottom: solid 130px currentColor;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-40deg);
+    transform-origin: right 210px;
+    animation: shakeLeft 1s ease-in-out infinite;
+}
+
+.mustache::after {
+    content: "";
+    position: absolute;
+    left: 370px;
+    top: 115px;
+    width: 210px;
+    height: 120px;
+    border-bottom: solid 130px currentColor;
+    border-radius: 0 0 100% 0;
+    transform: rotate(40deg);
+    transform-origin: left 210px;
+    animation: shakeRight 1s ease-in-out infinite;
+}
+
+@keyframes shakeLeft {
+    0% {
+        transform: rotate(-50deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(-50deg);
+    }
+}
+
+@keyframes shakeRight {
+    0% {
+        transform: rotate(50deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(50deg);
+    }
+}
+
+/* Ojos */
+.eye-left{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    border: 4px solid black;
+}
+
+.eye-left {
+    top: 210px;
+    left: 535px;
+}
+
+
+/* Pupilas */
+.eye-left::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    top: 20px;
+    left: 20px;
+}
+
+.text {
+    position: absolute;
+    top: 75px;
+    width: 100px;
+    left: 30%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
